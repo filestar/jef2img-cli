@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var argv = require('minimist')(process.argv.slice(2));
+
+var path = require('path');
+var jef2img = require('jef2img');
+
+var jefFile = path.resolve(argv["i"]);
+var outputFile = path.resolve(argv["o"]);
+
+var outputName = path.basename(outputFile, path.extname(outputFile));
+var outputFileType = path.extname(outputFile).substr(1);
+var outputDirectory = path.dirname(outputFile);
+
+// console.log(jefFile);
+// console.log(outputFile);
+// console.log(outputName);
+// console.log(outputFileType);
+// console.log(outputDirectory);
+
+jef2img.setOptions({
+    type: 'image/'+outputFileType,                          
+    outputdir: outputDirectory, 
+    outputname: outputName                
+});
+
+jef2img.convert(jefFile, function(err, info) {
+    if (err) {
+        console.error("ERROR:"+err.message);
+    }
+});

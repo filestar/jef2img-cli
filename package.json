@@ -1,0 +1,22 @@
+{
+  "name": "jef2img-cli",
+  "version": "1.0.4",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filestar/jef2img-cli.git"
+  },
+  "author": "Niels Bosma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filestar/jef2img-cli/issues"
+  },
+  "homepage": "https://github.com/filestar/jef2img-cli#readme",
+  "dependencies": {
+    "jef2img": "1.0.0",
+    "minimist": "1.2.5"
+  },
+  "bin": {
+    "jef2img": "index"
+  }
+}
